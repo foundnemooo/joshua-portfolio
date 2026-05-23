@@ -82,13 +82,13 @@ function Hero() {
   const arrowY = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const roleX = useTransform(scrollYProgress, [0, 1], [0, 60]);
 
-  const reveal = {
+  const reveal: Variants = {
     hidden: { opacity: 0, y: 24, filter: "blur(12px)" },
     show: (i: number) => ({
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 + i * 0.15 },
+      transition: { duration: 1, ease: [0.22, 1, 0.36, 1] as const, delay: 0.2 + i * 0.15 },
     }),
   };
 
