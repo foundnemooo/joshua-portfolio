@@ -167,10 +167,7 @@ function SplashScreen({ visible }: { visible: boolean }) {
             transition={{ duration: shouldReduceMotion ? 0.01 : 0.45, ease: easeOut }}
             className="px-6 text-center"
           >
-            <p className="font-mono-ui text-[10px] tracking-[0.35em] text-black/55">
-              portfolio
-            </p>
-            <h1 className="font-display mt-3 text-6xl leading-none sm:text-8xl">joshua.</h1>
+            <h1 className="font-display text-6xl leading-none sm:text-8xl">joshua.</h1>
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
@@ -711,15 +708,17 @@ function Contact() {
       </motion.p>
     </Section>
   );
-}
-
-function Index() {
+}  function Index() {
   const [showSplash, setShowSplash] = useState(true);
+  const [heroKey, setHeroKey] = useState(0);
   const [activeSection, setActiveSection] = useState("");
   const scrollRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const timeout = window.setTimeout(() => setShowSplash(false), 1450);
+    const timeout = window.setTimeout(() => {
+      setShowSplash(false);
+      setHeroKey((k) => k + 1);
+    }, 1450);
     return () => window.clearTimeout(timeout);
   }, []);
 
@@ -837,7 +836,7 @@ function Index() {
         ref={scrollRef}
         className="flex min-h-screen flex-col snap-y snap-mandatory overflow-x-hidden overflow-y-auto scroll-smooth bg-white text-black md:h-screen md:flex-row md:snap-x md:overflow-x-auto md:overflow-y-hidden"
       >
-        <Hero />
+        <Hero key={heroKey} />
         <About />
         <Projects />
         <Contact />
