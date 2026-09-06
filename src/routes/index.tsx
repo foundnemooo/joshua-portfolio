@@ -27,6 +27,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import resumePdf from "@/files/Joshua_Ceazar_Lopez_Resume.pdf?url";
 import nemoPosFavicon from "@/files/nemoPOS/favicon.png?url";
 import nemoPos01 from "@/files/nemoPOS/1.png?url";
 import nemoPos02 from "@/files/nemoPOS/2.png?url";
@@ -105,7 +106,7 @@ const projects: Project[] = [
   {
     title: "TDIP (TESDA DNPO Integrated Portal)",
     tag: "Web App · 2025",
-    blurb: "No Info Yet",
+    blurb: "A centralized web application developed to streamline TESDA regional office operations through role-based workflows for CACS, Finance, Scholarship, UTPRAS, and Administration. Features include assessment scheduling, payment processing, document generation, program monitoring, audit logs, notifications, and real-time data management powered by Supabase.",
     thumbnail: tdipFavicon,
     screenshots: [tdip01, tdip02, tdip03, tdip04, tdip05, tdip06],
     screenshotLayout: "desktop",
@@ -560,7 +561,7 @@ function About() {
     },
     {
       title: "Full Stack Web Developer",
-      meta: "TESDA (Technical Education and Skills Development Authority)",
+      meta: "TESDA (Technical Education and Skills Development Authority) Davao del Norte Provincial Office",
       date: "Mar 2026 - Present",
     },
   ];
@@ -663,7 +664,7 @@ function Contact() {
   const socials = [
     { label: "github", href: "https://github.com/foundnemooo" },
     { label: "linkedin", href: "https://www.linkedin.com/in/joshua-ceazar-lopez-071723359/" },
-    { label: "resume", href: "/resume.pdf" },
+    { label: "resume", href: resumePdf },
   ];
   return (
     <Section id="contact" eyebrow="03 / hire me" title="contact.">
