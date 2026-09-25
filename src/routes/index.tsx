@@ -28,6 +28,14 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import resumePdf from "@/files/Joshua_Ceazar_Lopez_Resume.pdf?url";
+import headshot from "@/files/Headshot.png?url";
+import certificateFaljo from "@/files/certificates/coursera-faljo4ge80ay.pdf?url";
+import certificate6sw from "@/files/certificates/coursera-6sw2sz7hsasy.pdf?url";
+import certificateAs3 from "@/files/certificates/coursera-as3bzc8mkfsd.pdf?url";
+import certificateU8y from "@/files/certificates/coursera-u8yx7d9y2rl6.pdf?url";
+import certificateHnw from "@/files/certificates/coursera-hnwlwflxplth.pdf?url";
+import certificateGra from "@/files/certificates/coursera-gra5d7514u10.pdf?url";
+import certificateWordpress from "@/files/certificates/certificate-wordpress.jpg?url";
 import nemoPosFavicon from "@/files/nemoPOS/favicon.png?url";
 import nemoPos01 from "@/files/nemoPOS/1.png?url";
 import nemoPos02 from "@/files/nemoPOS/2.png?url";
@@ -70,6 +78,7 @@ export const Route = createFileRoute("/")({
 const navLinks = [
   { label: "about", href: "#about" },
   { label: "projects", href: "#projects" },
+  { label: "certificates", href: "#certificates" },
   { label: "contact", href: "#contact" },
 ];
 
@@ -113,6 +122,16 @@ const projects: Project[] = [
   },
   
 ];
+
+const certificates = [
+  { title: "Introduction to Front-End Development", label: "certificate 01", src: certificateFaljo, type: "pdf" },
+  { title: "HTML and CSS In Depth", label: "certificate 02", src: certificateU8y, type: "pdf" },
+  { title: "Programming with JavaScript", label: "certificate 03", src: certificateGra, type: "pdf" },
+  { title: "Version Control", label: "certificate 04", src: certificateHnw, type: "pdf" },
+  { title: "React Basics", label: "certificate 05", src: certificateAs3, type: "pdf" },
+  { title: "Advanced React", label: "certificate 06", src: certificate6sw, type: "pdf" },
+  { title: "Web Content Management Using WordPress", label: "certificate 07", src: certificateWordpress, type: "image" },
+] as const;
 
 function Nav({
   activeSection,
@@ -219,82 +238,87 @@ function Hero() {
     <section
       ref={ref}
       data-horizontal-panel
-      className="relative flex min-h-screen snap-start items-center px-6 sm:px-12 md:h-screen md:min-w-full md:overflow-y-auto lg:px-20"
+      className="relative flex min-h-screen snap-start items-start overflow-hidden px-6 sm:px-12 md:h-screen md:min-w-full lg:px-20"
     >
-      <div className="w-full max-w-6xl">
-        <motion.p
-          variants={reveal}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.7 }}
-          custom={0}
-          className="font-mono-ui text-sm sm:text-base tracking-[0.35em] text-black"
-        >
-          hello world!
-        </motion.p>
+      <div className="relative z-10 w-full max-w-6xl pt-[22vh] lg:pt-[20vh]">
+        <div className="relative z-10">
+          <motion.p
+            variants={reveal}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            custom={0}
+            className="font-sans-ui text-2xl font-light tracking-[0.24em] text-black sm:text-3xl"
+          >
+            hello world!
+          </motion.p>
 
-        <motion.h1
-          variants={reveal}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.7 }}
-          custom={1}
-          className="font-display mt-3 text-[18vw] leading-[0.95] text-black sm:text-[15vw] lg:text-[11rem]"
-        >
-          i am joshua.
-        </motion.h1>
+          <motion.h1
+            variants={reveal}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            custom={1}
+            className="font-display mt-3 max-w-[54rem] text-[18vw] leading-[0.95] text-black sm:text-[15vw] lg:text-[8.5rem]"
+          >
+            i am joshua.
+          </motion.h1>
 
-        <motion.div
-          style={{ transform: shouldReduceMotion ? "none" : roleGroupTransform }}
-          className="relative mt-8 sm:mt-4 flex justify-end will-change-transform"
-        >
-          <div className="relative flex items-end gap-4 sm:gap-6 pr-2 sm:pr-12">
-            <motion.div
-              initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.94 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false, amount: 0.7 }}
-              transition={{
-                duration: shouldReduceMotion ? 0.01 : 0.52,
-                delay: shouldReduceMotion ? 0 : 0.58,
-                ease: easeOut,
-              }}
-              className="text-black"
-            >
-              <CurvedArrow className="h-20 w-20 sm:h-28 sm:w-28" />
-            </motion.div>
-            <motion.p
-              variants={reveal}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.7 }}
-              custom={4}
-              className="font-sans-ui pb-2 text-sm sm:text-lg tracking-[0.25em] text-black"
-            >
-              junior web developer
-            </motion.p>
-          </div>
-        </motion.div>
+          <motion.div
+            style={{ transform: shouldReduceMotion ? "none" : roleGroupTransform }}
+            className="relative mt-8 flex justify-end will-change-transform sm:mt-4 lg:mr-[10%]"
+          >
+            <div className="relative flex items-center gap-3 pr-2 sm:gap-6 sm:pr-12">
+              <motion.div
+                initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.94 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false, amount: 0.7 }}
+                transition={{
+                  duration: shouldReduceMotion ? 0.01 : 0.52,
+                  delay: shouldReduceMotion ? 0 : 0.58,
+                  ease: easeOut,
+                }}
+                className="relative translate-x-4 -translate-y-5 text-black sm:translate-x-8 sm:-translate-y-10"
+              >
+                <CurvedArrow className="h-24 w-24 sm:h-32 sm:w-32" />
+              </motion.div>
+              <motion.p
+                variants={reveal}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.7 }}
+                custom={4}
+                className="font-sans-ui pb-2 text-sm tracking-[0.2em] text-black sm:text-lg"
+              >
+                junior web developer
+              </motion.p>
+            </div>
+          </motion.div>
+
+          <motion.figure
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 18, scale: shouldReduceMotion ? 1 : 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.35 }}
+            transition={{ duration: shouldReduceMotion ? 0.01 : 0.72, delay: shouldReduceMotion ? 0 : 0.2, ease: easeOut }}
+            animate={shouldReduceMotion ? undefined : { y: [0, -8, 0] }}
+            className="mx-auto mt-8 w-[min(72vw,18rem)] lg:hidden"
+          >
+            <img src={headshot} alt="Joshua wearing a traditional barong shirt" className="block h-auto w-full object-contain" />
+          </motion.figure>
+        </div>
+
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: false, amount: 0.7 }}
-        transition={{
-          duration: shouldReduceMotion ? 0.01 : 0.5,
-          delay: shouldReduceMotion ? 0 : 1,
-        }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      <motion.figure
+        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 18, scale: shouldReduceMotion ? 1 : 0.97 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: false, amount: 0.35 }}
+        transition={{ duration: shouldReduceMotion ? 0.01 : 0.72, delay: shouldReduceMotion ? 0 : 0.2, ease: easeOut }}
+        animate={shouldReduceMotion ? undefined : { y: [0, -8, 0] }}
+        className="pointer-events-none absolute right-0 bottom-0 z-0 hidden h-[112vh] w-full lg:block"
       >
-        <div className="flex flex-col items-center gap-2">
-          <span className="font-mono-ui text-[10px] tracking-[0.3em] text-black/60">scroll</span>
-          <motion.div
-            animate={shouldReduceMotion ? undefined : { x: [0, 8, 0] }}
-            transition={{ duration: 1.45, repeat: Infinity, ease: easeInOut }}
-            className="h-px w-10 bg-black/40"
-          />
-        </div>
-      </motion.div>
+        <img src={headshot} alt="Joshua wearing a traditional barong shirt" className="absolute right-[10vw] bottom-0 block h-full w-auto max-w-[56vw] object-contain object-bottom" />
+      </motion.figure>
     </section>
   );
 }
@@ -321,7 +345,7 @@ function Section({
       className={`min-h-screen snap-start px-6 sm:px-12 md:h-screen md:min-w-full lg:px-20 ${
         scrollable
           ? "py-24 sm:py-28 md:overflow-y-auto"
-          : "flex items-center overflow-hidden py-10 sm:py-12 md:py-8"
+          : "flex items-start overflow-hidden py-24 sm:py-28 md:overflow-hidden"
       }`}
     >
       <motion.div
@@ -332,8 +356,8 @@ function Section({
         className="mx-auto max-w-6xl"
       >
         <p className="font-mono-ui text-xs tracking-[0.35em] text-black/60">{eyebrow}</p>
-        <h2 className="font-display mt-4 text-5xl sm:text-7xl text-black">{title}</h2>
-        <div className={scrollable ? "mt-12" : "mt-5"}>{children}</div>
+        <h2 className="font-display mt-4 text-5xl text-black sm:text-7xl">{title}</h2>
+        <div className={scrollable ? "mt-12" : "mt-0"}>{children}</div>
       </motion.div>
     </section>
   );
@@ -464,7 +488,7 @@ function Projects() {
                   className={`w-full max-w-none overflow-hidden text-left font-sans-ui text-base leading-relaxed text-black/80 sm:max-w-3xl ${
                     isDescriptionExpanded
                       ? "block"
-                      : "[display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]"
+                      : "[display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] sm:block"
                   }`}
                 >
                   {selectedProject.blurb}
@@ -532,6 +556,141 @@ function Projects() {
           ) : null}
         </DialogContent>
       </Dialog>
+    </Section>
+  );
+}
+
+function Certificates() {
+  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
+  const [currentCertificate, setCurrentCertificate] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (!carouselApi) {
+      return;
+    }
+
+    const updateCurrentCertificate = () => {
+      setCurrentCertificate(carouselApi.selectedScrollSnap());
+    };
+
+    updateCurrentCertificate();
+    carouselApi.on("select", updateCurrentCertificate);
+    carouselApi.on("reInit", updateCurrentCertificate);
+
+    return () => {
+      carouselApi.off("select", updateCurrentCertificate);
+      carouselApi.off("reInit", updateCurrentCertificate);
+    };
+  }, [carouselApi]);
+
+  return (
+    <Section id="certificates" eyebrow="03 / credentials" title="certificates." scrollable={false}>
+      <div className="relative mx-auto max-w-6xl pt-8 sm:pt-12">
+        <Carousel
+          opts={{ align: "center", loop: true, duration: 24 }}
+          setApi={setCarouselApi}
+          className="overflow-hidden"
+        >
+          <CarouselContent className="-ml-5 items-center sm:-ml-6">
+            {certificates.map((certificate, index) => {
+              const isActive = index === currentCertificate;
+
+              return (
+                <CarouselItem key={certificate.src} className="basis-[82%] pl-5 sm:basis-[58%] sm:pl-6 lg:basis-[46%]">
+                  <motion.div
+                    initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 18 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.25 }}
+                    transition={{
+                      duration: shouldReduceMotion ? 0.01 : 0.5,
+                      delay: shouldReduceMotion ? 0 : index * 0.06,
+                      ease: easeOut,
+                    }}
+                  >
+                    <motion.a
+                      href={certificate.src}
+                      target="_blank"
+                      rel="noreferrer"
+                      initial={false}
+                      animate={{
+                        opacity: isActive ? 1 : 0.5,
+                        scale: isActive || shouldReduceMotion ? 1 : 0.88,
+                      }}
+                      whileHover={shouldReduceMotion ? undefined : { y: -8 }}
+                      whileTap={shouldReduceMotion ? undefined : { scale: 0.985 }}
+                      transition={{ duration: shouldReduceMotion ? 0.01 : 0.35, ease: easeOut }}
+                      className="group block"
+                      aria-label={`Open ${certificate.title}`}
+                    >
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-black/[0.04] shadow-[0_20px_60px_rgba(0,0,0,0.08)] ring-1 ring-black/10 transition-[background-color,box-shadow] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:bg-black/[0.08] group-hover:shadow-[0_24px_70px_rgba(0,0,0,0.08)]">
+                      {certificate.type === "image" ? (
+                        <img
+                          src={certificate.src}
+                          alt={certificate.title}
+                          className="h-full w-full object-cover"
+                        />
+                      ) : (
+                        <iframe
+                          src={`${certificate.src}#page=1&view=Fit&zoom=page-fit&toolbar=0&navpanes=0&scrollbar=0`}
+                          title={certificate.title}
+                          className="pointer-events-none h-full w-full bg-white"
+                          scrolling="no"
+                        />
+                      )}
+                      <span className="absolute right-3 top-3 bg-white/90 px-2 py-1 font-mono-ui text-[9px] tracking-[0.2em] text-black/65 ring-1 ring-black/10">
+                        {certificate.type}
+                      </span>
+                    </div>
+                    <div className="mt-4 flex items-baseline justify-between gap-4">
+                      <h3 className="font-sans-ui text-sm font-semibold text-black">{certificate.title}</h3>
+                      <span className="shrink-0 font-mono-ui text-[9px] tracking-[0.2em] text-black/45">
+                        {certificate.label}
+                      </span>
+                    </div>
+                    </motion.a>
+                  </motion.div>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+          <div className="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-2 sm:px-4">
+            <Button
+              type="button"
+              variant="outline"
+              size="icon"
+              aria-label="Previous certificate"
+              onClick={() => carouselApi?.scrollPrev()}
+              className="pointer-events-auto h-9 w-9 rounded-full border-black/10 bg-white/90 text-black shadow-sm backdrop-blur transition-[background-color,color,transform] duration-150 hover:bg-black hover:text-white active:scale-[0.97]"
+            >
+              <ArrowLeft className="h-4 w-4" />
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              size="icon"
+              aria-label="Next certificate"
+              onClick={() => carouselApi?.scrollNext()}
+              className="pointer-events-auto h-9 w-9 rounded-full border-black/10 bg-white/90 text-black shadow-sm backdrop-blur transition-[background-color,color,transform] duration-150 hover:bg-black hover:text-white active:scale-[0.97]"
+            >
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </div>
+        </Carousel>
+        <div className="mt-8 flex justify-center gap-2" aria-label="Certificate slides">
+          {certificates.map((certificate, index) => (
+            <button
+              key={certificate.src}
+              type="button"
+              aria-label={`Show ${certificate.title} ${index + 1}`}
+              onClick={() => carouselApi?.scrollTo(index)}
+              className={`h-1.5 rounded-full transition-[background-color,width] duration-200 ${
+                index === currentCertificate ? "w-8 bg-black" : "w-4 bg-black/20"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
     </Section>
   );
 }
@@ -840,6 +999,7 @@ function Contact() {
         <Hero key={heroKey} />
         <About />
         <Projects />
+        <Certificates />
         <Contact />
       </main>
     </>
