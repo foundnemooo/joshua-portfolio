@@ -345,7 +345,7 @@ function Section({
       className={`min-h-screen snap-start px-6 sm:px-12 md:h-screen md:min-w-full lg:px-20 ${
         scrollable
           ? "py-24 sm:py-28 md:overflow-y-auto"
-          : "flex items-start overflow-hidden py-24 sm:py-28 md:overflow-hidden"
+          : "flex items-start overflow-x-hidden py-24 sm:py-28 md:overflow-hidden"
       }`}
     >
       <motion.div
@@ -586,7 +586,7 @@ function Certificates() {
 
   return (
     <Section id="certificates" eyebrow="03 / credentials" title="certificates." scrollable={false}>
-      <div className="relative mx-auto max-w-6xl pt-8 sm:pt-12">
+      <div className="relative mx-auto w-full max-w-6xl pt-6 sm:pt-12">
         <Carousel
           opts={{ align: "center", loop: true, duration: 24 }}
           setApi={setCarouselApi}
@@ -597,7 +597,7 @@ function Certificates() {
               const isActive = index === currentCertificate;
 
               return (
-                <CarouselItem key={certificate.src} className="basis-[82%] pl-5 sm:basis-[58%] sm:pl-6 lg:basis-[46%]">
+                <CarouselItem key={certificate.src} className="basis-[88%] pl-4 sm:basis-[58%] sm:pl-6 lg:basis-[46%]">
                   <motion.div
                     initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 18 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -642,8 +642,8 @@ function Certificates() {
                         {certificate.type}
                       </span>
                     </div>
-                    <div className="mt-4 flex items-baseline justify-between gap-4">
-                      <h3 className="font-sans-ui text-sm font-semibold text-black">{certificate.title}</h3>
+                    <div className="mt-4 flex min-w-0 items-baseline justify-between gap-3">
+                      <h3 className="min-w-0 break-words font-sans-ui text-sm font-semibold text-black">{certificate.title}</h3>
                       <span className="shrink-0 font-mono-ui text-[9px] tracking-[0.2em] text-black/45">
                         {certificate.label}
                       </span>
